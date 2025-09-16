@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Pentecote District de Baguida</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="logo-header">
+                <h1>Pentecote District de Baguida</h1>
+            </div>
+            <div class="language-selector">
+                <select id="language-switcher">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="ee">Eʋegbe</option>
+                </select>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html" data-translate="home">Accueil</a></li>
+                    <li><a href="login.html" data-translate="login">Connexion</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <div class="container">
+                <div class="form-container">
+                    <h2 data-translate="login">Connexion</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="email" data-translate="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" data-translate="password">Mot de passe</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-translate="login">Se connecter</button>
+                    </form>
+                    <p style="margin-top: 1rem;">
+                        <span data-translate="no_account">Pas encore de compte?</span>
+                        <a href="register.html" data-translate="register">Inscrivez-vous</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Pentecote District de Baguida. <span data-translate="all_rights_reserved">Tous droits réservés</span>.</p>
+        </div>
+    </footer>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

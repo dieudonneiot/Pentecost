@@ -1,0 +1,541 @@
+/* Variables CSS */
+:root {
+    --primary-color: #4a6baf;
+    --secondary-color: #f4f4f4;
+    --accent-color: #e67e22;
+    --text-color: #333;
+    --light-text: #fff;
+    --dark-bg: #2c3e50;
+    --light-bg: #ecf0f1;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--box-shadow);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-header h1 {
+    font-size: 1.5rem;
+}
+
+.language-selector select {
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+#main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+#main-nav li {
+    margin-left: 1.5rem;
+}
+
+#main-nav a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#main-nav a:hover {
+    color: var(--accent-color);
+}
+
+#mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/church-bg.jpg') no-repeat center center/cover;
+    color: var(--light-text);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+}
+
+.btn-primary:hover {
+    background-color: #d35400;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--light-text);
+    border: 2px solid var(--light-text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-text);
+    color: var(--text-color);
+}
+
+/* Features section */
+.features {
+    padding: 4rem 0;
+    background-color: var(--light-text);
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Latest content section */
+.latest-content {
+    padding: 4rem 0;
+}
+
+.latest-content h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Form styles */
+.form-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--light-text);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--dark-bg);
+    }
+    
+    #main-nav.active {
+        display: block;
+    }
+    
+    #main-nav ul {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    
+    #main-nav li {
+        margin: 0;
+    }
+    
+    #main-nav a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    #mobile-menu-toggle {
+        display: block;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Styles pour le tableau de bord */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.dashboard-card {
+    background-color: var(--light-text);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.dashboard-card h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.user-welcome {
+    background-color: var(--light-text);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+}
+
+/* Styles pour les événements */
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.event-time {
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.event-details {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.event-actions {
+    min-width: 120px;
+}
+
+/* Styles pour les annonces */
+.announcement {
+    background-color: var(--light-text);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+}
+
+.announcement-date {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.announcement-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+}
+
+/* Styles pour la galerie */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-item-info {
+    transform: translateY(0);
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+/* Styles pour les messages */
+.daily-message {
+    background-color: var(--light-text);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+}
+
+.message-date {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.message-content {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.bible-verse {
+    font-style: italic;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+
+.message-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+}
+
+/* Styles pour les demandes de prière */
+.prayer-request {
+    background-color: var(--light-text);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1.5rem;
+}
+
+.prayer-content {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.prayer-count {
+    display: inline-block;
+    margin-left: 1rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Styles pour le contact */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-info,
+.contact-form {
+    background-color: var(--light-text);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.contact-item {
+    margin-bottom: 1.5rem;
+}
+
+.contact-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .event-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .event-details {
+        padding: 1rem 0;
+    }
+    
+    .event-actions {
+        align-self: flex-end;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .online-service-container {
+        flex-direction: column;
+    }
+}

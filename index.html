@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentecote District de Baguida</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Firebase App -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <!-- Header avec navigation -->
+    <header>
+        <div class="container">
+            <div id="logo-header">
+                <h1>Pentecote District de Baguida</h1>
+            </div>
+            <div class="language-selector">
+                <select id="language-switcher">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="ee">Eʋegbe</option>
+                </select>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html" data-translate="home">Accueil</a></li>
+                    <li><a href="programme.html" data-translate="program">Programme</a></li>
+                    <li><a href="culte-en-ligne.html" data-translate="online_service">Culte en ligne</a></li>
+                    <li><a href="message-du-jour.html" data-translate="daily_message">Message du jour</a></li>
+                    <li><a href="annonces.html" data-translate="announcements">Annonces</a></li>
+                    <li><a href="galerie.html" data-translate="gallery">Galerie</a></li>
+                    <li><a href="priere.html" data-translate="prayer">Prière</a></li>
+                    <li><a href="contact.html" data-translate="contact">Contact</a></li>
+                    <li id="auth-link"><a href="login.html" data-translate="login">Connexion</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2 data-translate="welcome_message">Bienvenue dans notre communauté</h2>
+                <p data-translate="welcome_description">Rejoignez-nous pour worship et fellowship</p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn btn-primary" data-translate="join_us">Rejoignez-nous</a>
+                    <a href="programme.html" class="btn btn-secondary" data-translate="view_program">Voir le programme</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 data-translate="our_services">Nos services</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 data-translate="online_worship">Culte en ligne</h3>
+                        <p data-translate="online_worship_desc">Participez à nos services où que vous soyez</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 data-translate="community">Communauté</h3>
+                        <p data-translate="community_desc">Rejoignez une communauté bienveillante</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 data-translate="spiritual_growth">Croissance spirituelle</h3>
+                        <p data-translate="spiritual_growth_desc">Développez votre foi avec nos ressources</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-content">
+            <div class="container">
+                <h2 data-translate="latest_news">Dernières actualités</h2>
+                <div id="news-container">
+                    <!-- Contenu dynamique chargé depuis Firestore -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Pentecote District de Baguida. <span data-translate="all_rights_reserved">Tous droits réservés</span>.</p>
+        </div>
+    </footer>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

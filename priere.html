@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prière - Pentecote District de Baguida</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="logo-header">
+                <h1>Pentecote District de Baguida</h1>
+            </div>
+            <div class="language-selector">
+                <select id="language-switcher">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="ee">Eʋegbe</option>
+                </select>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html" data-translate="home">Accueil</a></li>
+                    <li><a href="dashboard.html" data-translate="dashboard">Tableau de bord</a></li>
+                    <li><a href="programme.html" data-translate="program">Programme</a></li>
+                    <li><a href="culte-en-ligne.html" data-translate="online_service">Culte en ligne</a></li>
+                    <li><a href="message-du-jour.html" data-translate="daily_message">Message du jour</a></li>
+                    <li><a href="annonces.html" data-translate="announcements">Annonces</a></li>
+                    <li><a href="galerie.html" data-translate="gallery">Galerie</a></li>
+                    <li><a href="priere.html" data-translate="prayer">Prière</a></li>
+                    <li><a href="contact.html" data-translate="contact">Contact</a></li>
+                    <li id="auth-link"><a href="login.html" data-translate="login">Connexion</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 data-translate="prayer">Prière</h2>
+            
+            <div class="prayer-container">
+                <div class="prayer-request-form">
+                    <h3 data-translate="submit_prayer_request">Soumettre une demande de prière</h3>
+                    <form id="prayer-request-form">
+                        <div class="form-group">
+                            <label for="prayer-title" data-translate="title">Titre</label>
+                            <input type="text" id="prayer-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="prayer-content" data-translate="content">Contenu</label>
+                            <textarea id="prayer-content" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="prayer-public">
+                                <span data-translate="public_prayer">Rendre cette demande publique (visible par tous les membres)</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-translate="submit">Soumettre</button>
+                    </form>
+                </div>
+                
+                <div class="prayer-requests">
+                    <h3 data-translate="prayer_requests">Demandes de prière</h3>
+                    <div id="prayer-requests-list">
+                        <!-- Demandes de prière chargées dynamiquement -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Pentecote District de Baguida. <span data-translate="all_rights_reserved">Tous droits réservés</span>.</p>
+        </div>
+    </footer>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/priere.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Pentecote District de Baguida</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <!-- Header (identique à index.html) -->
+    <header>
+        <!-- Même header que index.html -->
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 data-translate="admin_dashboard">Tableau de bord administrateur</h2>
+            
+            <div class="admin-tabs">
+                <button class="tab-link active" onclick="openTab(event, 'stats-tab')" data-translate="statistics">Statistiques</button>
+                <button class="tab-link" onclick="openTab(event, 'members-tab')" data-translate="members_management">Gestion des membres</button>
+                <button class="tab-link" onclick="openTab(event, 'content-tab')" data-translate="content_management">Gestion de contenu</button>
+                <button class="tab-link" onclick="openTab(event, 'events-tab')" data-translate="events_management">Gestion des événements</button>
+            </div>
+            
+            <div id="stats-tab" class="tab-content active">
+                <h3 data-translate="statistics">Statistiques</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4 data-translate="total_members">Total membres</h4>
+                        <p id="total-members">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4 data-translate="members_by_parish">Membres par paroisse</h4>
+                        <div id="parish-stats">
+                            <!-- Chargé dynamiquement -->
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h4 data-translate="members_by_age">Membres par âge</h4>
+                        <div id="age-stats">
+                            <!-- Chargé dynamiquement -->
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h4 data-translate="members_by_gender">Membres par genre</h4>
+                        <div id="gender-stats">
+                            <!-- Chargé dynamiquement -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="members-tab" class="tab-content">
+                <h3 data-translate="members_management">Gestion des membres</h3>
+                <div class="table-responsive">
+                    <table id="members-table">
+                        <thead>
+                            <tr>
+                                <th data-translate="lastname">Nom</th>
+                                <th data-translate="firstname">Prénom</th>
+                                <th data-translate="parish">Paroisse</th>
+                                <th data-translate="age_category">Catégorie d'âge</th>
+                                <th data-translate="gender">Genre</th>
+                                <th data-translate="actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Chargé dynamiquement -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div id="content-tab" class="tab-content">
+                <h3 data-translate="content_management">Gestion de contenu</h3>
+                <div class="content-actions">
+                    <button class="btn btn-primary" onclick="showContentForm('announcement')" data-translate="new_announcement">Nouvelle annonce</button>
+                    <button class="btn btn-primary" onclick="showContentForm('message')" data-translate="new_message">Nouveau message</button>
+                    <button class="btn btn-primary" onclick="showContentForm('event')" data-translate="new_event">Nouvel événement</button>
+                </div>
+                
+                <div id="content-form" style="display: none; margin-top: 2rem;">
+                    <!-- Formulaire chargé dynamiquement selon le type de contenu -->
+                </div>
+                
+                <div class="content-list" style="margin-top: 2rem;">
+                    <h4 data-translate="existing_content">Contenu existant</h4>
+                    <div id="content-items">
+                        <!-- Chargé dynamiquement -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="events-tab" class="tab-content">
+                <h3 data-translate="events_management">Gestion des événements</h3>
+                <!-- Contenu de la gestion des événements -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (identique à index.html) -->
+    <footer>
+        <!-- Même footer que index.html -->
+    </footer>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

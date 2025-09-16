@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Pentecote District de Baguida</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="logo-header">
+                <h1>Pentecote District de Baguida</h1>
+            </div>
+            <div class="language-selector">
+                <select id="language-switcher">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="ee">Eʋegbe</option>
+                </select>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html" data-translate="home">Accueil</a></li>
+                    <li><a href="dashboard.html" data-translate="dashboard">Tableau de bord</a></li>
+                    <li><a href="programme.html" data-translate="program">Programme</a></li>
+                    <li><a href="culte-en-ligne.html" data-translate="online_service">Culte en ligne</a></li>
+                    <li><a href="message-du-jour.html" data-translate="daily_message">Message du jour</a></li>
+                    <li><a href="annonces.html" data-translate="announcements">Annonces</a></li>
+                    <li><a href="galerie.html" data-translate="gallery">Galerie</a></li>
+                    <li><a href="priere.html" data-translate="prayer">Prière</a></li>
+                    <li><a href="contact.html" data-translate="contact">Contact</a></li>
+                    <li id="auth-link"><a href="login.html" data-translate="login">Connexion</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 data-translate="contact">Contact</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 data-translate="contact_info">Informations de contact</h3>
+                    <div class="contact-item">
+                        <h4 data-translate="address">Adresse</h4>
+                        <p>Pentecote District de Baguida<br>Rue principale, Baguida<br>Togo</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4 data-translate="phone">Téléphone</h4>
+                        <p>+228 XX XX XX XX</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4 data-translate="email">Email</h4>
+                        <p>contact@pentecost-baguida.org</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4 data-translate="pastor">Pasteur</h4>
+                        <p>Pasteur John Doe</p>
+                        <p>pasteur@pentecost-baguida.org</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 data-translate="send_message">Envoyer un message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name" data-translate="name">Nom</label>
+                            <input type="text" id="contact-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email" data-translate="email">Email</label>
+                            <input type="email" id="contact-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject" data-translate="subject">Sujet</label>
+                            <input type="text" id="contact-subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message" data-translate="message">Message</label>
+                            <textarea id="contact-message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-translate="send">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Pentecote District de Baguida. <span data-translate="all_rights_reserved">Tous droits réservés</span>.</p>
+        </div>
+    </footer>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
